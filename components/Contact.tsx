@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Image from 'next/image';
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle2, FileText, User } from 'lucide-react';
 import { useSite } from '../contexts/SiteContext';
 import { collection, addDoc } from 'firebase/firestore';
@@ -139,7 +138,7 @@ const Contact: React.FC = () => {
             
             {/* Map Placeholder */}
             <div className="mt-8 rounded-xl overflow-hidden h-48 bg-slate-200 dark:bg-slate-700 relative group">
-                 <Image 
+                 <img 
                     src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80" 
                     alt="Map Location" 
                     width={800}

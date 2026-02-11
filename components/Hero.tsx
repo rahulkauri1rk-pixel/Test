@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import { ArrowRight, ChevronRight } from 'lucide-react';
 import { useSite } from '../contexts/SiteContext';
 
@@ -28,12 +27,10 @@ const Hero: React.FC = () => {
     <section id="home" className="relative pt-32 pb-24 md:pt-48 md:pb-40 overflow-hidden">
       {/* Background Image & Overlay */}
       <div className="absolute inset-0 z-0">
-        <Image
+        <img
           src={hero.backgroundImage}
           alt="Background"
-          fill
-          className="object-cover transform scale-105"
-          priority
+          className="w-full h-full object-cover transform scale-105"
         />
         {/* Stronger overlay for better text contrast */}
         <div className="absolute inset-0 bg-slate-900/70 mix-blend-multiply"></div>

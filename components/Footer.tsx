@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import { useSite } from '../contexts/SiteContext';
 
@@ -12,7 +11,7 @@ const Footer: React.FC = () => {
     <footer className="bg-primary-dark text-white pt-16 pb-8 relative overflow-hidden">
       {/* Background Overlay */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
-         <Image
+         <img
           src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200"
           alt="background"
           width={1200}

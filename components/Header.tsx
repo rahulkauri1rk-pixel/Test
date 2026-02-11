@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Moon, Sun, Phone, FileText, LogIn, Package } from 'lucide-react';
 import { useSite } from '../contexts/SiteContext';
-import Link from 'next/link';
 
 interface HeaderProps {
   darkMode: boolean;
@@ -39,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
   }, []);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('/')) return; // Allow normal Next.js Link behavior for internal routes
+    if (href.startsWith('/')) return;
     
     e.preventDefault();
     const targetId = href.replace('#', '');
@@ -115,7 +114,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
             </a>
           ))}
           
-          <Link
+          <a
             href="/v4"
             className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${
               isScrolled 
@@ -125,7 +124,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
           >
             <Package size={16} />
             Parcel Tracking
-          </Link>
+          </a>
           
           <button
             onClick={openLoginModal}
@@ -228,13 +227,13 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
             </a>
           ))}
           
-          <Link
+          <a
             href="/v4"
             className="text-lg font-medium text-slate-800 dark:text-slate-200 hover:text-primary dark:hover:text-primary-light flex items-center gap-2"
             onClick={() => setIsMobileMenuOpen(false)}
           >
              <Package size={18} /> Parcel Tracking
-          </Link>
+          </a>
           
           <button
             onClick={() => { openLoginModal(); setIsMobileMenuOpen(false); }}
